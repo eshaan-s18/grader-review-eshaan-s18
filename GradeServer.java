@@ -48,6 +48,7 @@ class Handler implements URLHandler {
            String[] parameters = url.getQuery().split("=");
            if (parameters[0].equals("repo")) {
                String[] cmd = {"bash", "grade.sh", parameters[1]};
+               System.out.print(parameters[1]);
                String result = ExecHelpers.exec(cmd);
                return result;
            }
